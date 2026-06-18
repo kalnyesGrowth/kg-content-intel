@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KG Content Guide | June 17-23, 2026</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;
+  --card:#12121a;
+  --card-hover:#161620;
+  --border:#1e1e2e;
+  --accent:#3b82f6;
+  --accent-dim:#1e3a5f;
+  --green:#22c55e;
+  --green-dim:#0d3320;
+  --orange:#f59e0b;
+  --orange-dim:#422006;
+  --red:#ef4444;
+  --red-dim:#450a0a;
+  --purple:#a855f7;
+  --purple-dim:#2e1065;
+  --text:#e4e4e7;
+  --text-dim:#71717a;
+  --text-bright:#fafafa;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono','SF Mono','Fira Code',monospace;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* NAV */
+.topnav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,10,15,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:12px 20px;
+}
+.topnav-inner{
+  max-width:900px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;flex-wrap:wrap;
+}
+.topnav h1{
+  font-size:1rem;font-weight:700;
+  color:var(--text-bright);letter-spacing:-0.02em;
+  white-space:nowrap;
+}
+.topnav h1 span{color:var(--accent);font-weight:800}
+.nav-pills{display:flex;gap:6px;flex-wrap:wrap}
+.nav-pill{
+  font-size:0.7rem;font-weight:600;
+  padding:4px 10px;border-radius:20px;
+  background:var(--card);border:1px solid var(--border);
+  color:var(--text-dim);text-decoration:none;
+  transition:all 0.2s;white-space:nowrap;
+}
+.nav-pill:hover,.nav-pill:focus{
+  background:var(--accent-dim);color:var(--accent);
+  border-color:var(--accent);
+}
+
+/* HERO */
+.hero{
+  max-width:900px;margin:0 auto;
+  padding:40px 20px 20px;
+}
+.hero h2{
+  font-size:clamp(1.4rem,4vw,2rem);
+  font-weight:800;letter-spacing:-0.03em;
+  color:var(--text-bright);
+  margin-bottom:8px;
+}
+.hero p{color:var(--text-dim);font-size:0.9rem;margin-bottom:20px}
+.stats-row{
+  display:flex;gap:16px;flex-wrap:wrap;
+}
+.stat{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:12px 16px;
+  flex:1;min-width:120px;
+}
+.stat-num{
+  font-size:1.4rem;font-weight:800;
+  color:var(--accent);letter-spacing:-0.02em;
+}
+.stat-label{font-size:0.7rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.05em;margin-top:2px}
+
+/* CONTENT CARDS */
+.cards{max-width:900px;margin:0 auto;padding:20px}
+.content-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  margin-bottom:24px;
+  overflow:hidden;
+  transition:border-color 0.2s;
+}
+.content-card:hover{border-color:#2a2a3e}
+
+.card-header{
+  padding:20px 24px 16px;
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:12px;flex-wrap:wrap;
+}
+.card-meta{display:flex;flex-direction:column;gap:8px;flex:1}
+.card-day{
+  font-size:0.65rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.1em;
+  color:var(--text-dim);
+}
+.card-title{
+  font-size:1.2rem;font-weight:800;
+  color:var(--text-bright);letter-spacing:-0.02em;
+}
+.card-badges{display:flex;gap:6px;flex-wrap:wrap;align-items:flex-start}
+.badge{
+  font-size:0.6rem;font-weight:700;
+  padding:3px 8px;border-radius:6px;
+  text-transform:uppercase;letter-spacing:0.05em;
+  white-space:nowrap;
+}
+.badge-ig{background:var(--purple-dim);color:var(--purple)}
+.badge-tt{background:var(--red-dim);color:var(--red)}
+.badge-yt{background:var(--red-dim);color:#ff4444}
+.badge-li{background:var(--accent-dim);color:var(--accent)}
+.badge-x{background:#1a1a2e;color:#a0a0b0}
+.badge-framework{background:var(--green-dim);color:var(--green)}
+.badge-segment{background:var(--orange-dim);color:var(--orange)}
+.badge-duration{background:#1a1a2e;color:var(--text-dim)}
+
+/* HOOK SECTION */
+.hook-section{
+  margin:0 24px;padding:20px;
+  background:linear-gradient(135deg,var(--accent-dim),rgba(59,130,246,0.05));
+  border:1px solid rgba(59,130,246,0.2);
+  border-radius:10px;
+}
+.hook-label{
+  font-size:0.6rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.12em;
+  color:var(--accent);margin-bottom:6px;
+}
+.hook-text{
+  font-size:clamp(1.1rem,3vw,1.5rem);
+  font-weight:800;
+  color:var(--text-bright);
+  letter-spacing:-0.02em;
+  line-height:1.3;
+}
+.hook-category{
+  font-size:0.7rem;color:var(--text-dim);margin-top:8px;
+  font-style:italic;
+}
+
+/* SCRIPT */
+.script-section{padding:16px 24px}
+.script-label{
+  font-size:0.65rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.1em;
+  color:var(--text-dim);margin-bottom:10px;
+  display:flex;align-items:center;gap:6px;
+}
+.script-steps{list-style:none;display:flex;flex-direction:column;gap:0}
+.script-step{
+  display:grid;
+  grid-template-columns:64px 1fr;
+  gap:0;
+  padding:10px 0;
+  border-bottom:1px solid rgba(30,30,46,0.6);
+}
+.script-step:last-child{border-bottom:none}
+.step-time{
+  font-family:var(--mono);
+  font-size:0.75rem;font-weight:700;
+  color:var(--accent);
+  padding-top:2px;
+}
+.step-action{font-size:0.85rem;color:var(--text);line-height:1.5}
+.step-action strong{color:var(--text-bright);font-weight:700}
+.step-action em{color:var(--green);font-style:normal;font-weight:600}
+
+/* DETAILS SECTIONS */
+.details-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  padding:0 24px 20px;
+}
+@media(max-width:600px){.details-grid{grid-template-columns:1fr}}
+.detail-box{
+  background:rgba(18,18,26,0.5);
+  border:1px solid var(--border);
+  border-radius:8px;padding:12px 14px;
+}
+.detail-label{
+  font-size:0.6rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.1em;
+  color:var(--text-dim);margin-bottom:4px;
+}
+.detail-text{font-size:0.82rem;color:var(--text);line-height:1.5}
+.detail-text strong{color:var(--text-bright)}
+
+/* WHY IT WORKS */
+.why-section{
+  padding:12px 24px 20px;
+  border-top:1px solid var(--border);
+}
+.why-text{
+  font-size:0.8rem;color:var(--text-dim);
+  line-height:1.5;font-style:italic;
+}
+
+/* SCHEDULE TABLE */
+.schedule{
+  max-width:900px;margin:0 auto;
+  padding:20px;
+}
+.schedule h3{
+  font-size:1.1rem;font-weight:800;
+  color:var(--text-bright);margin-bottom:16px;
+  letter-spacing:-0.02em;
+}
+.schedule-table{
+  width:100%;border-collapse:collapse;
+  background:var(--card);border-radius:10px;
+  overflow:hidden;border:1px solid var(--border);
+}
+.schedule-table th{
+  font-size:0.65rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.08em;
+  color:var(--text-dim);padding:10px 14px;
+  text-align:left;background:rgba(18,18,26,0.8);
+  border-bottom:1px solid var(--border);
+}
+.schedule-table td{
+  font-size:0.82rem;padding:10px 14px;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.schedule-table tr:last-child td{border-bottom:none}
+.schedule-table .day-cell{font-weight:700;color:var(--accent);white-space:nowrap}
+.schedule-table .type-cell{
+  font-size:0.7rem;font-weight:600;
+  padding:2px 8px;border-radius:4px;
+  display:inline-block;
+}
+.type-engage{background:var(--purple-dim);color:var(--purple)}
+.type-product{background:var(--green-dim);color:var(--green)}
+.type-brand{background:var(--orange-dim);color:var(--orange)}
+.type-viral{background:var(--red-dim);color:var(--red)}
+.type-auth{background:var(--accent-dim);color:var(--accent)}
+.type-edu{background:#1a2332;color:#60a5fa}
+.type-convert{background:#2d1b1b;color:#fca5a5}
+.type-niche{background:#1b2d1b;color:#86efac}
+
+/* QUICK RULES */
+.rules{
+  max-width:900px;margin:0 auto;
+  padding:0 20px 40px;
+}
+.rules h3{
+  font-size:1.1rem;font-weight:800;
+  color:var(--text-bright);margin-bottom:16px;
+  letter-spacing:-0.02em;
+}
+.rules-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:12px;
+}
+.rule-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:14px 16px;
+}
+.rule-card .rule-icon{font-size:1.2rem;margin-bottom:6px;display:block}
+.rule-card .rule-title{
+  font-size:0.8rem;font-weight:700;
+  color:var(--text-bright);margin-bottom:4px;
+}
+.rule-card .rule-desc{font-size:0.75rem;color:var(--text-dim);line-height:1.4}
+
+/* PRINT */
+@media print{
+  body{background:#fff;color:#111}
+  .topnav{position:relative;background:#fff;border-bottom:2px solid #111}
+  .content-card{break-inside:avoid;border:1px solid #ccc}
+  .hook-section{background:#f0f4ff;border:1px solid #3b82f6}
+  .hook-text{color:#111}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <h1><span>KG</span> Filming Guide</h1>
+    <div class="nav-pills">
+      <a href="#c1" class="nav-pill">#1 Roast</a>
+      <a href="#c2" class="nav-pill">#2 AI Demo</a>
+      <a href="#c3" class="nav-pill">#3 Grind</a>
+      <a href="#c4" class="nav-pill">#4 B/A</a>
+      <a href="#c5" class="nav-pill">#5 Stack</a>
+      <a href="#c6" class="nav-pill">#6 Math</a>
+      <a href="#c7" class="nav-pill">#7 Bilingual</a>
+      <a href="#c8" class="nav-pill">#8 Teardown</a>
+      <a href="#c9" class="nav-pill">#9 $400</a>
+      <a href="#c10" class="nav-pill">#10 Restaurant</a>
+      <a href="#schedule" class="nav-pill">Schedule</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <h2>Content Filming Guide</h2>
+  <p>June 17 - 23, 2026. 10 pieces. 7 days. Every hook, script, and CTA ready to film.</p>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num">10</div><div class="stat-label">Content Pieces</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Days</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label">Platforms</div></div>
+    <div class="stat"><div class="stat-num">8</div><div class="stat-label">Frameworks</div></div>
+  </div>
+</section>
+
+<section class="cards">
+
+  <!-- CONTENT #1 -->
+  <article class="content-card" id="c1">
+    <div class="card-header">
+      <div class="card-meta">
+        <div class="card-day">Day 1 - Tuesday, June 17</div>
+        <div class="card-title">#1 The Website Roast</div>
+        <div class="card-badges">
+          <span class="badge badge-ig">IG Reel</span>
+          <span class="badge badge-tt">TikTok</span>
+          <span class="badge badge-framework">The Roast</span>
+          <span class="badge badge-segment">Ostrich + Burned</span>
+          <span class="badge badge-duration">25-30s</span>
+        </div>
+      </div>
+    </div>
+    <div class="hook-section">
+      <div class="hook-label">Hook (First 2 Seconds)</div>
+      <div class="hook-text">"This local business is losing customers right now and they don't even know it."</div>
+      <div class="hook-category">Contrarian Strike - Tier 1-B</div>
+    </div>
+    <div class="script-section">
+      <div class="script-label">Script Breakdown</div>
+      <ol class="script-steps">
+        <li class="script-step"><span class="step-time">0-2s</span><span class="step-action"><strong>TEXT ON SCREEN:</strong> "WEBSITE ROAST" + say the hook</span></li>
+        <li class="script-step"><span class="step-time">2-5s</span><span class="step-action">Screen recording: pull up a generic bad local business website <em>(blur the name)</em></span></li>
+        <li class="script-step"><span class="step-time">5-8s</span><span class="step-action">"No phone number above the fold. <strong>Gone.</strong>"</span></li>
+        <li class="script-step"><span class="step-time">8-11s</span><span class="step-action">"Looks broken on mobile. <strong>70% of their customers are on their phone.</strong>"</span></li>
+        <li class="script-step"><span class="step-time">11-14s</span><span class="step-action">"Takes 8 seconds to load. Google says <strong>3 seconds max.</strong>"</span></li>
+        <li class="script-step"><span class="step-time">14-20s</span><span class="step-action">Quick screen record: show what a <em>fixed version</em> looks like</span></li>
+        <li class="script-step"><span class="step-time">20-25s</span><span class="step-action"><strong>TEXT:</strong> "These 3 fixes could double their phone calls."</span></li>
+        <li class="script-step"><span class="step-time">25-28s</span><span class="step-action"><em>CTA delivery</em></span></li>
+      </ol>
+    </div>
+    <div class="details-grid">
+      <div class="detail-box">
+        <div class="detail-label">Thumbnail / Cover</div>
+        <div class="detail-text"><strong>Pattern 5 (Screen Grab):</strong> Screenshot of a bad website with red circles on problems. Bold text: "WEBSITE ROAST"</div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">CTA</div>
+        <div class="detail-text">"Send me your website link. I'll tell you exactly what's costing you customers. <strong>Free.</strong>"</div>
+      </div>
+    </div>
+    <div class="why-section">
+      <div class="why-text">Roast format drives highest comment rate and DMs in the agency niche. Positions JJ as expert without self-promotion. Viewers tag friends who need this.</div>
+    </div>
+  </article>
+
+  <!-- CONTENT #2 -->
+  <article class="content-card" id="c2">
+    <div class="card-header">
+      <div class="card-meta">
+        <div class="card-day">Day 1 - Tuesday, June 17</div>
+        <div class="card-title">#2 AI Receptionist Live Demo</div>
+        <div class="card-badges">
+          <span class="badge badge-tt">TikTok</span>
+          <span class="badge badge-yt">YT Short</span>
+          <span class="badge badge-framework">The Reveal</span>
+          <span class="badge badge-segment">Ready Buyer + Skeptic</span>
+          <span class="badge badge-duration">20-25s</span>
+        </div>
+      </div>
+    </div>
+    <div class="hook-section">
+      <div class="hook-label">Hook (First 2 Seconds)</div>
+      <div class="hook-text">"Watch what happens when a customer calls this business at 2 AM."</div>
+      <div class="hook-category">Open Loop - Tier 1-C</div>
+    </div>
+    <div class="script-section">
+      <div class="script-label">Script Breakdown</div>
+      <ol class="script-steps">
+        <li class="script-step"><span class="step-time">0-2s</span><span class="step-action">Hook text on screen + voice</span></li>
+        <li class="script-step"><span class="step-time">2-5s</span><span class="step-action">Screen record: <strong>phone ringing, AI picks up</strong></span></li>
+        <li class="script-step"><span class="step-time">5-15s</span><span class="step-action">AI receptionist answers, takes details, <em>books appointment live</em></span></li>
+        <li class="script-step"><span class="step-time">15-18s</span><span class="step-action"><strong>TEXT:</strong> "24/7. No missed calls. $397/month."</span></li>
+        <li class="script-step"><span class="step-time">18-22s</span><span class="step-action">"Your receptionist costs $3,500/month and goes home at 5 PM."</span></li>
+        <li class="script-step"><span class="step-time">22-25s</span><span class="step-action"><em>CTA delivery</em></span></li>
+      </ol>
+    </div>
+    <div class="details-grid">
+      <div class="detail-box">
+        <div class="detail-label">Thumbnail / Cover</div>
+        <div class="detail-text"><strong>Pattern 3 (Number Lead):</strong> Giant "$397/mo" with phone icon and text "vs. $3,500/mo receptionist"</div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">CTA</div>
+        <div class="detail-text">"Comment <strong>DEMO</strong> and I'll show you how this works for your specific business."</div>
+      </div>
+    </div>
+    <div class="why-section">
+      <div class="why-text">AI agent demos are the #1 emerging content trend in 2026. Screen recording format needs no face. The 2 AM hook highlights a real pain (missed after-hours calls).</div>
+    </div>
+  </article>
+
+  <!-- CONTENT #3 -->
+  <article class="content-card" id="c3">
+    <div class="card-header">
+      <div class="card-meta">
+        <div class="card-day">Day 2 - Wednesday, June 18</div>
+        <div class="card-title">#3 The Builder Grind</div>
+        <div class="card-badges">
+          <span class="badge badge-ig">IG Reel</span>
+          <span class="badge badge-tt">TikTok</span>
+          <span class="badge badge-framework">Day in Life</span>
+          <span class="badge badge-segment">All Segments</span>
+          <span class="badge badge-duration">30-40s</span>
+        </div>
+      </div>
+    </div>
+    <div class="hook-section">
+      <div class="hook-label">Hook (First 2 Seconds)</div>
+      <div class="hook-text">"9-5 done. Now the real work starts."</div>
+      <div class="hook-category">Builder-in-Public - JJ Specific</div>
+    </div>
+    <div class="script-section">
+      <div class="script-label">Script Breakdown</div>
+      <ol class="script-steps">
+        <li class="script-step"><span class="step-time">0-2s</span><span class="step-action">JJ leaving work / closing laptop at job. <strong>TEXT: "9-5 DONE."</strong></span></li>
+        <li class="script-step"><span class="step-time">2-5s</span><span class="step-action">Quick cut: opening laptop at home setup</span></li>
+        <li class="script-step"><span class="step-time">5-10s</span><span class="step-action">Screen recording: <em>building a website for a client (timelapse)</em></span></li>
+        <li class="script-step"><span class="step-time">10-15s</span><span class="step-action">Quick cut: checking phone. Client text: <strong>"the phone hasn't stopped ringing"</strong></span></li>
+        <li class="script-step"><span class="step-time">15-20s</span><span class="step-action">Back to building. TEXT: "Day [X] of building an agency after hours."</span></li>
+        <li class="script-step"><span class="step-time">20-30s</span><span class="step-action">Montage: code on screen, website going live, coffee, late night</span></li>
+        <li class="script-step"><span class="step-time">30-35s</span><span class="step-action">"Every business owner deserves a website that works. Building them one at a time."</span></li>
+        <li class="script-step"><span class="step-time">35-40s</span><span class="step-action">End card: <strong>@kalnyesgrowth</strong></span></li>
+      </ol>
+    </div>
+    <div class="details-grid">
+      <div class="detail-box">
+        <div class="detail-label">Thumbnail / Cover</div>
+        <div class="detail-text"><strong>Pattern 2 (Bold Text):</strong> JJ at desk, late night lighting. Bold text: "AFTER THE 9-5"</div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">CTA</div>
+        <div class="detail-text">No hard CTA. <strong>Follow for the journey.</strong> Brand building content.</div>
+      </div>
+    </div>
+    <div class="why-section">
+      <div class="why-text">Companion-style "build with me" formats are trending hard in 2026. JJ's immigrant grinder narrative is the most authentic version of this format in the niche.</div>
+    </div>
+  </article>
+
+  <!-- CONTENT #4 -->
+  <article class="content-card" id="c4">
+    <div class="card-header">
+      <div class="card-meta">
+        <div class="card-day">Day 3 - Thursday, June 19</div>
+        <div class="card-title">#4 Before/After Reveal</div>
+        <div class="card-badges">
+          <span class="badge badge-ig">IG Reel</span>
+          <span class="badge badge-tt">TikTok</span>
+          <span class="badge badge-yt">YT Short</span>
+          <span class="badge badge-framework">The Reveal + BAB</span>
+          <span class="badge badge-segment">Ostrich + DIY Warrior</span>
+          <span class="badge badge-duration">18-22s</span>
+        </div>
+      </div>
+    </div>
+    <div class="hook-section">
+      <div class="hook-label">Hook (First 2 Seconds)</div>
+      <div class="hook-text">"Same barbershop. Same budget. Different website."</div>
+      <div class="hook-category">Before/After Reveal - Tier 2-H</div>
+    </div>
+    <div class="script-section">
+      <div class="script-label">Script Breakdown</div>
+      <ol class="script-steps">
+        <li class="script-step"><span class="step-time">0-2s</span><span class="step-action">Split screen preview or text hook</span></li>
+        <li class="script-step"><span class="step-time">2-7s</span><span class="step-action"><strong>BEFORE:</strong> Old/bad website. Mobile view, slow, no phone number visible</span></li>
+        <li class="script-step"><span class="step-time">7-8s</span><span class="step-action"><em>Beat drop / transition effect</em></span></li>
+        <li class="script-step"><span class="step-time">8-15s</span><span class="step-action"><strong>AFTER:</strong> New KG-built website. Mobile-first, click-to-call, Google Maps, reviews</span></li>
+        <li class="script-step"><span class="step-time">15-18s</span><span class="step-action"><strong>TEXT:</strong> "Phone calls up 3x in 30 days."</span></li>
+        <li class="script-step"><span class="step-time">18-22s</span><span class="step-action"><em>CTA delivery</em></span></li>
+      </ol>
+    </div>
+    <div class="details-grid">
+      <div class="detail-box">
+        <div class="detail-label">Thumbnail / Cover</div>
+        <div class="detail-text"><strong>Pattern 1 (Split Screen):</strong> Left = old site (grainy, red tint). Right = new site (clean, green tint). Text: "SAME BUSINESS"</div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">CTA</div>
+        <div class="detail-text">"Want to see what YOUR website could look like? <strong>Link in bio</strong> to book a free demo."</div>
+      </div>
+    </div>
+    <div class="why-section">
+      <div class="why-text">Before/after reveals have the highest completion rate of ANY format. The visual contrast is impossible to scroll past. "Same budget" preemptively handles the price objection.</div>
+    </div>
+  </article>
+
+  <!-- CONTENT #5 -->
+  <article class="content-card" id="c5">
+    <div class="card-header">
+      <div class="card-meta">
+        <div class="card-day">Day 3 - Thursday, June 19</div>
+        <div class="card-title">#5 The Mistake Stack</div>
+        <div class="card-badges">
+          <span class="badge badge-li">LinkedIn</span>
+          <span class="badge badge-x">X / Twitter</span>
+          <span class="badge badge-framework">The Stack</span>
+          <span class="badge badge-segment">Skeptic + DIY Warrior</span>
+          <span class="badge badge-duration">Text Post</span>
+        </div>
+      </div>
+    </div>
+    <div class="hook-section">
+      <div class="hook-label">Hook (First Line)</div>
+      <div class="hook-text">"97% of people check your website before they call. Here's what yours is telling them."</div>
+      <div class="hook-category">Stat/Number - Tier 2-E</div>
+    </div>
+    <div class="script-section">
+      <div class="script-label">Post Body</div>
+      <ol class="script-steps">
+        <li class="script-step"><span class="step-time">Line 1</span><span class="step-action"><strong>97% of people check your website before calling.</strong></span></li>
+        <li class="script-step"><span class="step-time">Line 2</span><span class="step-action">Here's what yours might be saying:</span></li>
+        <li class="script-step"><span class="step-time">Point 1</span><span class="step-action">No phone number above the fold = <em>"We don't want your call"</em></span></li>
+        <li class="script-step"><span class="step-time">Point 2</span><span class="step-action">Broken on mobile = <em>"We don't care about your experience"</em></span></li>
+        <li class="script-step"><span class="step-time">Point 3</span><span class="step-action">Takes 5+ seconds to load = <em>"We're not professional"</em></span></li>
+        <li class="script-step"><span class="step-time">Point 4</span><span class="step-action">No reviews visible = <em>"Nobody trusts us either"</em></span></li>
+        <li class="script-step"><span class="step-time">Point 5</span><span class="step-action">Last updated in 2019 = <em>"We might not be open anymore"</em></span></li>
+        <li class="script-step"><span class="step-time">Close</span><span class="step-action">Your website is your first impression. Most local businesses get one shot.</span></li>
+        <li class="script-step"><span class="step-time">CTA</span><span class="step-action"><strong>Book a free 15-min audit. Link in comments.</strong></span></li>
+      </ol>
+    </div>
+    <div class="details-grid">
+      <div class="detail-box">
+        <div class="detail-label">Image</div>
+        <div class="detail-text"><strong>Unique Higgsfield 1:1.</strong> Prompt: "Professional dark workspace with laptop showing modern website design, subtle blue lighting, clean minimal aesthetic"</div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Platform Rules</div>
+        <div class="detail-text">LinkedIn penalizes external links. Put link in <strong>comments only.</strong> Carousels get 2.4x more impressions than video on LI.</div>
+      </div>
+    </div>
+    <div class="why-section">
+      <div class="why-text">Stack format drives saves (highest-weight signal on LinkedIn). The "97%" stat is real and cited. Each point uses the market's OWN language.</div>
+    </div>
+  </article>
+
+  <!-- CONTENT #6 -->
+  <article class="content-card" id="c6">
+    <div class="card-header">
+      <div class="card-meta">
+        <div class="card-day">Day 4 - Friday, June 20</div>
+        <div class="card-title">#6 The Missed Call Math</div>
+        <div class="card-badges">
+          <span class="badge badge-ig">IG Reel</span>
+          <span class="badge badge-tt">TikTok</span>
+          <span class="badge badge-framework">The Breakdown</span>
+          <span class="badge badge-segment">Ostrich + Ready Buyer</span>
+          <span class="badge badge-duration">22-28s</span>
+        </div>
+      </div>
+    </div>
+    <div class="hook-section">
+      <div class="hook-label">Hook (First 2 Seconds)</div>
+      <div class="hook-text">"Every missed call costs your business $200. Here's the math."</div>
+      <div class="hook-category">Stat/Number + Contrarian</div>
+    </div>
+    <div class="script-section">
+      <div class="script-label">Script Breakdown</div>
+      <ol class="script-steps">
+        <li class="script-step"><span class="step-time">0-2s</span><span class="step-action">Bold text + voice: <strong>the hook</strong></span></li>
+        <li class="script-step"><span class="step-time">2-6s</span><span class="step-action">"The average local business gets 20 calls a month."</span></li>
+        <li class="script-step"><span class="step-time">6-10s</span><span class="step-action">"If your website doesn't have a click-to-call button, you're missing <strong>30% of them.</strong>"</span></li>
+        <li class="script-step"><span class="step-time">10-14s</span><span class="step-action">"That's 6 missed calls. At $200 average ticket, that's <strong>$1,200/month gone.</strong>"</span></li>
+        <li class="script-step"><span class="step-time">14-18s</span><span class="step-action">"Fix: click-to-call button above the fold. <em>10 seconds to add.</em>"</span></li>
+        <li class="script-step"><span class="step-time">18-22s</span><span class="step-action">Screen record: <em>showing the fix live on a real website</em></span></li>
+        <li class="script-step"><span class="step-time">22-25s</span><span class="step-action">"Or let an AI answer every call 24/7 for <strong>$397/month.</strong>"</span></li>
+        <li class="script-step"><span class="step-time">25-28s</span><span class="step-action"><em>CTA delivery</em></span></li>
+      </ol>
+    </div>
+    <div class="details-grid">
+      <div class="detail-box">
+        <div class="detail-label">Thumbnail / Cover</div>
+        <div class="detail-text"><strong>Pattern 3 (Number Lead):</strong> Giant "$1,200/mo" with red "LOST" and arrow pointing to a phone</div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">CTA</div>
+        <div class="detail-text">"Comment <strong>MATH</strong> and I'll calculate how much money YOUR business is leaving on the table."</div>
+      </div>
+    </div>
+    <div class="why-section">
+      <div class="why-text">Specific numbers signal real expertise (6,037 avg views for outcome-showcase hooks). The math bridges from website fix to AI agent upsell naturally.</div>
+    </div>
+  </article>
+
+  <!-- CONTENT #7 -->
+  <article class="content-card" id="c7">
+    <div class="card-header">
+      <div class="card-meta">
+        <div class="card-day">Day 5 - Saturday, June 21</div>
+        <div class="card-title">#7 Bilingual Business Power</div>
+        <div class="card-badges">
+          <span class="badge badge-ig">IG Reel</span>
+          <span class="badge badge-tt">TikTok</span>
+          <span class="badge badge-framework">The Story + Confession</span>
+          <span class="badge badge-segment">All Segments</span>
+          <span class="badge badge-duration">30-40s</span>
+        </div>
+      </div>
+    </div>
+    <div class="hook-section">
+      <div class="hook-label">Hook (First 2 Seconds)</div>
+      <div class="hook-text">"Most web designers can't even talk to half their clients."</div>
+      <div class="hook-category">Confession / Vulnerability - Tier 1-D + Bilingual Angle</div>
+    </div>
+    <div class="script-section">
+      <div class="script-label">Script Breakdown</div>
+      <ol class="script-steps">
+        <li class="script-step"><span class="step-time">0-2s</span><span class="step-action">Hook text + voice</span></li>
+        <li class="script-step"><span class="step-time">2-8s</span><span class="step-action">"When I moved to the US at 20, English was the wall. But <strong>Spanish was the bridge.</strong>"</span></li>
+        <li class="script-step"><span class="step-time">8-14s</span><span class="step-action">"60% of the local businesses I work with are Spanish-speaking owners."</span></li>
+        <li class="script-step"><span class="step-time">14-20s</span><span class="step-action">"Their last web designer couldn't explain what they were building. Couldn't understand what the owner needed."</span></li>
+        <li class="script-step"><span class="step-time">20-26s</span><span class="step-action">"So the owner got a template, paid $2,000, and the <strong>phone never rang.</strong>"</span></li>
+        <li class="script-step"><span class="step-time">26-32s</span><span class="step-action">"Now? We build it together. In their language. For their customers."</span></li>
+        <li class="script-step"><span class="step-time">32-36s</span><span class="step-action">Quick montage: <em>website on phone, click-to-call, Google Maps</em></span></li>
+        <li class="script-step"><span class="step-time">36-40s</span><span class="step-action"><strong>"Tu negocio merece un sitio web que funcione. Let's build it."</strong></span></li>
+      </ol>
+    </div>
+    <div class="details-grid">
+      <div class="detail-box">
+        <div class="detail-label">Thumbnail / Cover</div>
+        <div class="detail-text"><strong>Pattern 2 (Bold Text):</strong> JJ face, bold text split: "ENGLISH" / "ESPANOL" with both flags</div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">CTA</div>
+        <div class="detail-text">Soft CTA. "Follow for more. <strong>DM me if you're a business owner who needs this.</strong>"</div>
+      </div>
+    </div>
+    <div class="why-section">
+      <div class="why-text">Nobody in the niche plays the bilingual angle. This is JJ's unfair advantage. The code-switch at the end is a pattern interrupt. Targets the entire underserved Hispanic local business market.</div>
+    </div>
+  </article>
+
+  <!-- CONTENT #8 -->
+  <article class="content-card" id="c8">
+    <div class="card-header">
+      <div class="card-meta">
+        <div class="card-day">Day 5 - Saturday, June 21</div>
+        <div class="card-title">#8 Competitor Website Teardown</div>
+        <div class="card-badges">
+          <span class="badge badge-yt">YT Short</span>
+          <span class="badge badge-tt">TikTok</span>
+          <span class="badge badge-framework">The Breakdown</span>
+          <span class="badge badge-segment">Burned + DIY Warrior</span>
+          <span class="badge badge-duration">35-45s</span>
+        </div>
+      </div>
+    </div>
+    <div class="hook-section">
+      <div class="hook-label">Hook (First 2 Seconds)</div>
+      <div class="hook-text">"Your competitor's website is stealing your customers. Let me show you how."</div>
+      <div class="hook-category">Open Loop - Tier 1-C</div>
+    </div>
+    <div class="script-section">
+      <div class="script-label">Script Breakdown</div>
+      <ol class="script-steps">
+        <li class="script-step"><span class="step-time">0-2s</span><span class="step-action">Hook text + voice</span></li>
+        <li class="script-step"><span class="step-time">2-8s</span><span class="step-action">Screen record: <strong>Google search "[business type] near me"</strong></span></li>
+        <li class="script-step"><span class="step-time">8-12s</span><span class="step-action">"See these top 3 results? They all have something in common."</span></li>
+        <li class="script-step"><span class="step-time">12-18s</span><span class="step-action">Point out: professional website, reviews visible, click-to-call, hours listed</span></li>
+        <li class="script-step"><span class="step-time">18-22s</span><span class="step-action">"Now look at the businesses on <strong>page 2.</strong>" Show bad websites.</span></li>
+        <li class="script-step"><span class="step-time">22-28s</span><span class="step-action">"Same service. Same quality work. But the phone only rings for <strong>page 1.</strong>"</span></li>
+        <li class="script-step"><span class="step-time">28-34s</span><span class="step-action">"The difference isn't skill. <strong>It's their website.</strong>"</span></li>
+        <li class="script-step"><span class="step-time">34-38s</span><span class="step-action">"Google decides who shows up based on these 5 things." <em>Quick list overlay.</em></span></li>
+        <li class="script-step"><span class="step-time">38-42s</span><span class="step-action"><em>CTA delivery</em></span></li>
+      </ol>
+    </div>
+    <div class="details-grid">
+      <div class="detail-box">
+        <div class="detail-label">Thumbnail / Cover</div>
+        <div class="detail-text"><strong>Pattern 5 (Screen Grab):</strong> Google search results with circles on top 3. Text: "WHY THEY RANK AND YOU DON'T"</div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">CTA</div>
+        <div class="detail-text">"Comment your <strong>business type and city.</strong> I'll check where you show up on Google."</div>
+      </div>
+    </div>
+    <div class="why-section">
+      <div class="why-text">YouTube Shorts gets 80% views from non-subscribers. Best TOFU tool. Keyword-optimized for "show up on Google" (market language). Diagnostic CTA drives quality comments.</div>
+    </div>
+  </article>
+
+  <!-- CONTENT #9 -->
+  <article class="content-card" id="c9">
+    <div class="card-header">
+      <div class="card-meta">
+        <div class="card-day">Day 6 - Sunday, June 22</div>
+        <div class="card-title">#9 The $400 vs $5,000 Website</div>
+        <div class="card-badges">
+          <span class="badge badge-ig">IG Reel</span>
+          <span class="badge badge-tt">TikTok</span>
+          <span class="badge badge-framework">The Comparison</span>
+          <span class="badge badge-segment">Skeptic + Burned</span>
+          <span class="badge badge-duration">20-25s</span>
+        </div>
+      </div>
+    </div>
+    <div class="hook-section">
+      <div class="hook-label">Hook (First 2 Seconds)</div>
+      <div class="hook-text">"This $400 website is outperforming a $10,000 one. Here's why."</div>
+      <div class="hook-category">Contrarian Strike + Open Loop</div>
+    </div>
+    <div class="script-section">
+      <div class="script-label">Script Breakdown</div>
+      <ol class="script-steps">
+        <li class="script-step"><span class="step-time">0-2s</span><span class="step-action">Hook text + voice</span></li>
+        <li class="script-step"><span class="step-time">2-7s</span><span class="step-action">Show the <strong>$10K website:</strong> fancy animations, slow load, no CTA, phone number buried</span></li>
+        <li class="script-step"><span class="step-time">7-10s</span><span class="step-action">"Looks pretty. <strong>Gets zero calls.</strong>"</span></li>
+        <li class="script-step"><span class="step-time">10-15s</span><span class="step-action">Show the <strong>$400 website:</strong> clean, fast, phone number top right, click-to-call, reviews</span></li>
+        <li class="script-step"><span class="step-time">15-18s</span><span class="step-action">"Not fancy. <strong>Gets 15 calls a week.</strong>"</span></li>
+        <li class="script-step"><span class="step-time">18-20s</span><span class="step-action"><strong>TEXT:</strong> "A website isn't art. It's a sales tool."</span></li>
+        <li class="script-step"><span class="step-time">20-23s</span><span class="step-action">"Stop paying for pretty. Start paying for calls."</span></li>
+        <li class="script-step"><span class="step-time">23-25s</span><span class="step-action"><em>CTA delivery</em></span></li>
+      </ol>
+    </div>
+    <div class="details-grid">
+      <div class="detail-box">
+        <div class="detail-label">Thumbnail / Cover</div>
+        <div class="detail-text"><strong>Pattern 1 (Split Screen):</strong> Left "$10,000" (fancy but ineffective). Right "$400" (clean, effective). Text: "WHICH ONE WINS?"</div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">CTA</div>
+        <div class="detail-text">"<strong>Link in bio</strong> to see a free demo built for YOUR business."</div>
+      </div>
+    </div>
+    <div class="why-section">
+      <div class="why-text">Open loop hook (how can a cheaper site outperform?). Addresses the #1 objection from Burned and Skeptic segments. Comparison format lets viewers draw their own conclusion.</div>
+    </div>
+  </article>
+
+  <!-- CONTENT #10 -->
+  <article class="content-card" id="c10">
+    <div class="card-header">
+      <div class="card-meta">
+        <div class="card-day">Day 7 - Monday, June 23</div>
+        <div class="card-title">#10 Niche Deep Dive: Restaurant Edition</div>
+        <div class="card-badges">
+          <span class="badge badge-ig">IG Reel</span>
+          <span class="badge badge-tt">TikTok</span>
+          <span class="badge badge-yt">YT Short</span>
+          <span class="badge badge-framework">The Stack + Reveal</span>
+          <span class="badge badge-segment">Niche (Restaurants)</span>
+          <span class="badge badge-duration">25-35s</span>
+        </div>
+      </div>
+    </div>
+    <div class="hook-section">
+      <div class="hook-label">Hook (First 2 Seconds)</div>
+      <div class="hook-text">"If you own a restaurant and your website doesn't have these 3 things, you're losing customers tonight."</div>
+      <div class="hook-category">Identity Call + List Tease - Tier 1-A</div>
+    </div>
+    <div class="script-section">
+      <div class="script-label">Script Breakdown</div>
+      <ol class="script-steps">
+        <li class="script-step"><span class="step-time">0-2s</span><span class="step-action">Hook text + voice. <strong>Bold text: "RESTAURANT OWNERS"</strong></span></li>
+        <li class="script-step"><span class="step-time">2-8s</span><span class="step-action"><strong>#1:</strong> "Online menu that loads in under 2 seconds on a phone." Show bad (PDF) vs good (clean mobile menu)</span></li>
+        <li class="script-step"><span class="step-time">8-14s</span><span class="step-action"><strong>#2:</strong> "A 'Reserve' or 'Order Now' button above the fold." Show no CTA vs clear CTA</span></li>
+        <li class="script-step"><span class="step-time">14-20s</span><span class="step-action"><strong>#3:</strong> "Google reviews visible on your homepage." Show the trust difference</span></li>
+        <li class="script-step"><span class="step-time">20-25s</span><span class="step-action">"<strong>76%</strong> of local searches lead to a visit within 24 hours."</span></li>
+        <li class="script-step"><span class="step-time">25-28s</span><span class="step-action">Quick reveal: proper restaurant website (KG demo)</span></li>
+        <li class="script-step"><span class="step-time">28-32s</span><span class="step-action"><em>CTA delivery</em></span></li>
+      </ol>
+    </div>
+    <div class="details-grid">
+      <div class="detail-box">
+        <div class="detail-label">Thumbnail / Cover</div>
+        <div class="detail-text"><strong>Pattern 2 (Bold Text):</strong> Dark restaurant interior background. Text: "RESTAURANT OWNERS"</div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">CTA</div>
+        <div class="detail-text">"Comment <strong>MENU</strong> if you own a restaurant. I'll check your website and tell you what's costing you reservations."</div>
+      </div>
+    </div>
+    <div class="why-section">
+      <div class="why-text">Niche micro-community content is the #1 trend for TikTok 2026. "Tonight" creates urgency. This format replicates for every niche (barber, plumber, salon).</div>
+    </div>
+  </article>
+
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule" id="schedule">
+  <h3>Weekly Posting Schedule</h3>
+  <table class="schedule-table">
+    <thead>
+      <tr><th>Day</th><th>Platform</th><th>Content</th><th>Type</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="day-cell">Tue 6/17</td><td>IG + TikTok</td><td>#1 Website Roast</td><td><span class="type-cell type-engage">Engagement</span></td></tr>
+      <tr><td class="day-cell">Tue 6/17</td><td>TikTok + YT</td><td>#2 AI Demo</td><td><span class="type-cell type-product">Product</span></td></tr>
+      <tr><td class="day-cell">Wed 6/18</td><td>IG + TikTok</td><td>#3 Builder Grind</td><td><span class="type-cell type-brand">Brand</span></td></tr>
+      <tr><td class="day-cell">Thu 6/19</td><td>IG + TT + YT</td><td>#4 Before/After</td><td><span class="type-cell type-viral">Viral</span></td></tr>
+      <tr><td class="day-cell">Thu 6/19</td><td>LinkedIn + X</td><td>#5 Mistake Stack</td><td><span class="type-cell type-auth">Authority</span></td></tr>
+      <tr><td class="day-cell">Fri 6/20</td><td>IG + TikTok</td><td>#6 Missed Call Math</td><td><span class="type-cell type-edu">Education</span></td></tr>
+      <tr><td class="day-cell">Sat 6/21</td><td>IG + TikTok</td><td>#7 Bilingual Power</td><td><span class="type-cell type-brand">Brand</span></td></tr>
+      <tr><td class="day-cell">Sat 6/21</td><td>YT + TikTok</td><td>#8 Competitor Teardown</td><td><span class="type-cell type-edu">Education</span></td></tr>
+      <tr><td class="day-cell">Sun 6/22</td><td>IG + TikTok</td><td>#9 $400 vs $5,000</td><td><span class="type-cell type-convert">Conversion</span></td></tr>
+      <tr><td class="day-cell">Mon 6/23</td><td>IG + TT + YT</td><td>#10 Restaurant Edition</td><td><span class="type-cell type-niche">Niche</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- QUICK RULES -->
+<section class="rules">
+  <h3>Filming Quick Rules</h3>
+  <div class="rules-grid">
+    <div class="rule-card">
+      <span class="rule-icon">&#9201;</span>
+      <div class="rule-title">2-Second Hook</div>
+      <div class="rule-desc">First word IS the hook. No warmup. No "hey guys." 1.3s on TikTok, 2.1s on IG.</div>
+    </div>
+    <div class="rule-card">
+      <span class="rule-icon">&#128247;</span>
+      <div class="rule-title">1:1 Aspect Ratio</div>
+      <div class="rule-desc">All content generated at 1:1. Never mix formats. Never convert from 4:3.</div>
+    </div>
+    <div class="rule-card">
+      <span class="rule-icon">&#128264;</span>
+      <div class="rule-title">Captions Always</div>
+      <div class="rule-desc">85% watch without sound. Burned-in captions = 25% higher completion rate. Bold sans-serif.</div>
+    </div>
+    <div class="rule-card">
+      <span class="rule-icon">&#128170;</span>
+      <div class="rule-title">Energy +20%</div>
+      <div class="rule-desc">20% higher energy than normal conversation. Raw > polished. Human moments beat production.</div>
+    </div>
+    <div class="rule-card">
+      <span class="rule-icon">&#128172;</span>
+      <div class="rule-title">Market Language</div>
+      <div class="rule-desc">"Phone calls" not "leads." "Customers" not "prospects." "Show up on Google" not "rank."</div>
+    </div>
+    <div class="rule-card">
+      <span class="rule-icon">&#127916;</span>
+      <div class="rule-title">Batch Film</div>
+      <div class="rule-desc">Film 3-5 videos in one session. Edit with captions + trending audio. Schedule throughout the week.</div>
+    </div>
+  </div>
+</section>
+
+<footer style="text-align:center;padding:20px;color:var(--text-dim);font-size:0.7rem;border-top:1px solid var(--border)">
+  KalnyesGrowth Content Intelligence System. Generated 2026-06-17.
+</footer>
+
+</body>
+</html>
