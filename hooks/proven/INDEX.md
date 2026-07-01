@@ -18,8 +18,10 @@
 ### Stat / Proof First
 - [002 - Stripe Dashboard Proof](002-stripe-proof-open-loop-kai.md) - Kai Stone, 192K views. Live Stripe showing $319K MRR before first sentence finishes
 
-### Contrarian
+### Contrarian / Confession
 - [004 - Contrarian Accusation + Voyeurism](004-contrarian-voyeurism-pavlo.md) - Pavlo, 341K views. "No one actually shows you how to get clients"
+- [008 - Confession + Contrarian Rage](008-confession-rage-callout-zubair.md) - Zubair Trabzada, 353K views. "I'm so sick and tired of these kids claiming $300K/mo"
+- [010 - Confession + Anti-Guru Credential](010-confession-contrarian-saraev.md) - Nick Saraev, 92K views. "I don't think local businesses are a gold mine" + $72K/mo proof
 
 ### Results / Portfolio
 - [005 - Portfolio Cascade + Revenue Reveal](005-portfolio-cascade-revenue-reveal-payton.md) - Payton Clark Smith, 381K views. Website screenshots cascade in, then green dollar amounts pop on each one
@@ -27,18 +29,30 @@
 ### Cinematic / High Production
 - [006 - Cinematic Montage + Revenue Counter](006-cinematic-montage-revenue-counter-liam.md) - Liam Ottley, 3.3M views. B-roll montage + $5M counter with analytics dashboards
 
+### Value Compression / Time
+- [007 - Time Compression + Kinetic Typography](007-time-compression-kinetic-smwd.md) - Self-Made Web Designer, 361K views. "10 years of web design knowledge in 7 minutes"
+
+### Comparison
+- [009 - Comparison Price Tier](009-comparison-price-tier-flux.md) - Flux Academy, 416K views. "$500 vs $5,000 vs $50,000 websites" with cascading screenshots
+
+### Identity Call / Loss Aversion
+- [011 - Identity Call + Stat + Loss Aversion](011-identity-stat-loss-aversion-savvy.md) - The Savvy Couple, 173K views. Red "-$1,000" overlay with cash in hand, "losing thousands" loss framing
+
 ---
 
 ## Cards by Visual Style
 
 ### Raw Webcam / Talking Head (No Overlays)
-- 001, 004
+- 001, 004, 008, 010
 
 ### Screen Recording + Face PIP
 - 002, 003
 
 ### Animated Overlay / Composite
-- 005
+- 005, 011
+
+### Kinetic Typography + Talking Head
+- 007, 009
 
 ### Cinematic B-Roll + Overlay
 - 006
@@ -49,6 +63,16 @@
 1. 3.3M - [006 - Liam Ottley](006-cinematic-montage-revenue-counter-liam.md)
 2. 872K - [001 - Gonnet](001-social-proof-open-loop-gonnet.md)
 3. 524K - [003 - Puruczky](003-visual-complexity-open-loop-puru.md)
-4. 381K - [005 - Payton Clark Smith](005-portfolio-cascade-revenue-reveal-payton.md)
-5. 341K - [004 - Pavlo](004-contrarian-voyeurism-pavlo.md)
-6. 192K - [002 - Kai Stone](002-stripe-proof-open-loop-kai.md)
+4. 416K - [009 - Flux Academy](009-comparison-price-tier-flux.md)
+5. 381K - [005 - Payton Clark Smith](005-portfolio-cascade-revenue-reveal-payton.md)
+6. 361K - [007 - Self-Made Web Designer](007-time-compression-kinetic-smwd.md)
+7. 353K - [008 - Zubair Trabzada](008-confession-rage-callout-zubair.md)
+8. 341K - [004 - Pavlo](004-contrarian-voyeurism-pavlo.md)
+9. 192K - [002 - Kai Stone](002-stripe-proof-open-loop-kai.md)
+10. 173K - [011 - The Savvy Couple](011-identity-stat-loss-aversion-savvy.md)
+11. 92K - [010 - Nick Saraev](010-confession-contrarian-saraev.md)
+
+---
+
+## Creators (11 unique, no duplicates)
+Thomas Gonnet, Kai Stone, Nicholas Puruczky, Pavlo, Payton Clark Smith, Liam Ottley, Self-Made Web Designer, Zubair Trabzada, Flux Academy, Nick Saraev, The Savvy Couple
