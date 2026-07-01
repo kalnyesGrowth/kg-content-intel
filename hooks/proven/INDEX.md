@@ -22,6 +22,7 @@
 - [004 - Contrarian Accusation + Voyeurism](004-contrarian-voyeurism-pavlo.md) - Pavlo, 341K views. "No one actually shows you how to get clients"
 - [008 - Confession + Contrarian Rage](008-confession-rage-callout-zubair.md) - Zubair Trabzada, 353K views. "I'm so sick and tired of these kids claiming $300K/mo"
 - [010 - Confession + Anti-Guru Credential](010-confession-contrarian-saraev.md) - Nick Saraev, 92K views. "I don't think local businesses are a gold mine" + $72K/mo proof
+- [012 - Trend Validation + Monetization Reveal](012-trend-validation-monetize-chrislee.md) - AI Chris Lee, 139K views. "Everyone says you can build $10K websites with AI" + premium pricing reframe
 
 ### Results / Portfolio
 - [005 - Portfolio Cascade + Revenue Reveal](005-portfolio-cascade-revenue-reveal-payton.md) - Payton Clark Smith, 381K views. Website screenshots cascade in, then green dollar amounts pop on each one
@@ -46,7 +47,7 @@
 - 001, 004, 008, 010
 
 ### Screen Recording + Face PIP
-- 002, 003
+- 002, 003, 012
 
 ### Animated Overlay / Composite
 - 005, 011
@@ -70,9 +71,10 @@
 8. 341K - [004 - Pavlo](004-contrarian-voyeurism-pavlo.md)
 9. 192K - [002 - Kai Stone](002-stripe-proof-open-loop-kai.md)
 10. 173K - [011 - The Savvy Couple](011-identity-stat-loss-aversion-savvy.md)
-11. 92K - [010 - Nick Saraev](010-confession-contrarian-saraev.md)
+11. 139K - [012 - AI Chris Lee](012-trend-validation-monetize-chrislee.md)
+12. 92K - [010 - Nick Saraev](010-confession-contrarian-saraev.md)
 
 ---
 
-## Creators (11 unique, no duplicates)
-Thomas Gonnet, Kai Stone, Nicholas Puruczky, Pavlo, Payton Clark Smith, Liam Ottley, Self-Made Web Designer, Zubair Trabzada, Flux Academy, Nick Saraev, The Savvy Couple
+## Creators (12 unique, no duplicates)
+Thomas Gonnet, Kai Stone, Nicholas Puruczky, Pavlo, Payton Clark Smith, Liam Ottley, Self-Made Web Designer, Zubair Trabzada, Flux Academy, Nick Saraev, The Savvy Couple, AI Chris Lee
